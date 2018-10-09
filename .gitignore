@@ -44,3 +44,8 @@ private.properties
 build_errors.txt
 build_log.txt
 manifest.mf
+
+# Directories #
+###############
+*/build
+*/nbproject
