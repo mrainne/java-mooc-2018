@@ -10,7 +10,7 @@ public class MontakoKertaaMerkkijonossa {
         String merkkijono = lukija.nextLine();
         System.out.print("Mitä haetaan: ");
         String haettava = lukija.nextLine();
-
+        int esiintymisia = 0;
         int indeksi = 0;
 
         while (indeksi < merkkijono.length()) {
@@ -20,9 +20,11 @@ public class MontakoKertaaMerkkijonossa {
                 break;
             }
 
-System.out.println("Merkkijono " + haettava + " löytyy kohdasta " + kohta);
+            esiintymisia++;
             indeksi = kohta + 1;
         }
+        System.out.println("");
+        System.out.println("Merkkijonon " + haettava + " esiintymiskertoja " + esiintymisia);
 
     }
 }

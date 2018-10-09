@@ -13,11 +13,11 @@ public class IoobVirheOhjelma {
         lines.add("to end the obscurity of physics. However, things didn't come easy for Bohr. He had to");
         lines.add("give up most of his life for physics and research of many hypothesis. But, this is why");
         lines.add("you and I have even heard of the quantum theory and atomic structures. Bohr came");
-        lines.add("up with his quantum theory while studying...");
+        lines.set(6, "up with his quantum theory while studying...");
 
-        for (String line : lines) {
+        for (String line: lines) {
             System.out.println(line);
         }
-
+        
     }
 }

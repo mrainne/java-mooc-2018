@@ -20,5 +20,12 @@ public class ListanSuurinLuku {
         System.out.println("");
 
         // toteuta listan lukujen summan laskeminen tänne
+        int suurin = lista.get(0);
+        for (Integer luku: lista) {
+            if (luku > suurin) {
+                suurin = luku;
+            }
+        }
+        System.out.println("Lista suurin luku: " + suurin);
     }
 }

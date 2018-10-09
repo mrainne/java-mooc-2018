@@ -16,6 +16,7 @@ public class EnsimmainenJaViimeinenArvo {
 
             lista.add(luettu);
         }
-
+        System.out.println(lista.get(0));
+        System.out.println(lista.get(lista.size()-1));
     }
 }

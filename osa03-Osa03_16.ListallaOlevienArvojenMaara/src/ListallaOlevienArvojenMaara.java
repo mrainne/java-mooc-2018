@@ -16,6 +16,6 @@ public class ListallaOlevienArvojenMaara {
 
             lista.add(luettu);
         }
-
+        System.out.println("Yhteensä: " + lista.size());
     }
 }

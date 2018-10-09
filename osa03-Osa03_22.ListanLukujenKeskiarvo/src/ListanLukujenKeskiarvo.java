@@ -11,5 +11,22 @@ public class ListanLukujenKeskiarvo {
         // lukuja listalle kunnes käyttäjä syöttää luvun -1.
         // ohjelma laskee tämän jälkeen listalla olevien lukujen
         // keskiarvon, ja tulostaa sen käyttäjän näkyville
+        ArrayList<Integer> lista = new ArrayList<>();
+        
+        while (true) {
+            int luku = Integer.parseInt(lukija.nextLine());
+            
+            if (luku == -1) {
+                break;
+            }
+            
+            lista.add(luku);
+        }
+        
+        int summa = 0;
+        for (Integer luku: lista) {
+            summa += luku;
+        }
+        System.out.println("Keskiarvo: " + 1.0 * summa / lista.size());
     }
 }

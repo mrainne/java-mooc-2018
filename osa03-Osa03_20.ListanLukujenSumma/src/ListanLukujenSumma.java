@@ -21,5 +21,11 @@ public class ListanLukujenSumma {
         System.out.println("");
 
         // toteuta listan lukujen summan laskeminen tänne
+        int summa = 0;
+        
+        for (Integer luku: lista) {
+            summa += luku;
+        }
+        System.out.println("Summa: " + summa);
     }
 }
