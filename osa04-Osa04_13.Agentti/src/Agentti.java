@@ -10,8 +10,8 @@ public class Agentti {
         this.sukunimi = sukunimiAlussa;
     }
     
-    public void tulosta() {
-    System.out.println("My name is " + this.sukunimi + ", " + this.etunimi + " " + this.sukunimi);
+    public String toString() {
+        return this.sukunimi + ", " + this.etunimi + " " + this.sukunimi;
     }
     
 }
