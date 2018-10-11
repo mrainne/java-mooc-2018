@@ -21,7 +21,39 @@ public class PuhelinmuistioSovellus {
         System.out.println("\tpoista - poistaa henkilön puhelinmuistiosta");
         
         // tee toteutuksesi tänne
-        
+        while (true) {
+            System.out.println("Komento:");
+            String komento = lukija.nextLine();
+            
+            if (komento.equals("lopeta")) {
+                break;
+            }
+            
+            if (komento.equals("lisaa")) {
+                System.out.println("Kenet lisätään?");
+                System.out.print("Etunimi: ");
+                String etunimi = lukija.nextLine();
+                System.out.print("Sukunimi: ");
+                String sukunimi = lukija.nextLine();
+                System.out.print("Puhelinnumero: ");
+                String numero = lukija.nextLine();
+                muistio.lisaa(etunimi, sukunimi, numero);
+            } else if (komento.equals("listaa")) {
+                muistio.listaa();
+            } else if (komento.equals("etsi")) {
+                System.out.print("Mitä numeroa etsitään?");
+                String numero = lukija.nextLine();
+                muistio.etsiPuhelinnumerolla(numero);
+            } else if (komento.equals("poista")) {
+                System.out.println("Kuka poistetaan?");
+                System.out.print("Etunimi: ");
+                String etunimi = lukija.nextLine();
+                System.out.print("Sukunimi: ");
+                String sukunimi = lukija.nextLine();
+                muistio.poista(etunimi, sukunimi);
+            }
+            System.out.println("");
+        }
         System.out.print("Minkä nimiseen tiedostoon muistio tallennetaan?");
         String tallennusnimi = lukija.nextLine();
         muistio.tallenna(tallennusnimi);
