@@ -5,7 +5,7 @@ public class Main {
         // Tämä on vain tyhjä main-metodi jossa voit kokeilla luokkasi toimintaa.
         // esimerkiksi: 
 
-        // Kertoja kolmellaKertoja = new Kertoja(3);
-        // System.out.println(kolmellaKertoja.kerro(5));
+        Kertoja kolmellaKertoja = new Kertoja(3);
+        System.out.println(kolmellaKertoja.kerro(5));
     }
 }
