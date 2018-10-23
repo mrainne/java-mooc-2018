@@ -11,7 +11,7 @@ public class Agentti {
     }
     
     public String toString() {
-        return this.sukunimi + ", " + this.etunimi + " " + this.sukunimi;
+        return "My name is " + this.sukunimi + ", " + this.etunimi + " " + this.sukunimi;
     }
     
 }
