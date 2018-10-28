@@ -18,7 +18,7 @@ public class LoytyykoTiedostosta {
             while (tiedostolukija.hasNextLine()) {
                 lista.add(tiedostolukija.nextLine());
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Tiedoston " + tiedosto + " lukeminen epäonnistui.");
         }
 
