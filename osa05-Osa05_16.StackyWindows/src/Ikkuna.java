@@ -69,5 +69,17 @@ public class Ikkuna {
     public void setVari(Color vari) {
         this.vari = vari;
     }
+    
+    public void siirraIkkunaa(int muutosX, int muutosY, int minX, int minY, int maxX, int maxY) {
+        int uusiX = this.getX() + muutosX;
+        int uusiY = this.getY() + muutosY;
+        
+        if ((uusiX < minX || uusiX > maxX ) || (uusiY < minY || uusiY > maxY)) {
+            return;
+        }
+                
+        this.setX(uusiX);
+        this.setY(uusiY); 
+    }
 
 }

@@ -33,7 +33,7 @@ public class StackyWindowsSovellus extends Application {
         ikkunat.add(new Ikkuna(250, 70, 250, 300, Color.RED));
         ikkunat.add(new Ikkuna(30, 80, 200, 300, Color.BLUE));
 
-        int[] alkupiste = new int[2]; // 
+        int[] alkupiste = new int[2];
         
         root.setOnMousePressed((MouseEvent event) -> {
             System.out.println("mouse click " + event.getSource());
@@ -65,11 +65,7 @@ public class StackyWindowsSovellus extends Application {
             int muutosX = alkuX - alkupiste[0];
             int muutosY = alkuY - alkupiste[1];
             
-            int uusiX = ikkunat.get(ikkunat.size()-1).getX() + muutosX;
-            int uusiY = ikkunat.get(ikkunat.size()-1).getY() + muutosY;
-            
-            ikkunat.get(ikkunat.size()-1).setX(uusiX);
-            ikkunat.get(ikkunat.size()-1).setY(uusiY);     
+            ikkunat.get(ikkunat.size()-1).siirraIkkunaa(muutosX, muutosY, 0, 0, ikkunanLeveys, ikkunanKorkeus);
         });
 
         new AnimationTimer() {
