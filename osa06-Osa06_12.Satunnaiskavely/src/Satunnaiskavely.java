@@ -47,40 +47,22 @@ public class Satunnaiskavely {
             x++;
         }
         
-        double tn = new Random().nextInt(101) / 100.0;
-        if (tn < 0.2) {
-            liikuYlos();
-        } else if (tn < 0.4) {
-            liikuOikealle();
-        } else if (tn < 0.6) {
-            liikuAlas();
-        } else if (tn < 0.8) {
-            liikuVasemmalle();
+        double tn = new Random().nextDouble();
+        
+        if (tn <= 0.2) {
+            this.sijaintiY++;
+        } else if (tn <= 0.4) {
+            this.sijaintiX++;
+        } else if (tn <= 0.6) {
+            this.sijaintiY--;
+        } else if (tn <= 0.8) {
+            this.sijaintiX--;
         } else {
-            pysy();
+            return;        
         }
         // kun hahmo on tietyssä pisteessä, asetetaan taulukkoon arvo 1
         // miksi?
         this.taulukko.get(this.sijaintiX).put(this.sijaintiY, 1.0);
-    }
-    
-    private void liikuYlos() {
-        this.sijaintiY += 1;
-    }
-    
-    private void liikuOikealle() {
-        this.sijaintiX += 1;
-    }
-
-    private void liikuAlas() {
-        this.sijaintiY -= 1;
-    }
-    
-    private void liikuVasemmalle() {
-        this.sijaintiX -= 1;
-    }
-    
-    private void pysy() {
     }
     
     public HashMap<Integer, HashMap<Integer, Double>> getTaulukko() {
