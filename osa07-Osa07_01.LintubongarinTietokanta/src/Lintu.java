@@ -36,6 +36,6 @@ public class Lintu {
     }
     @Override
     public String toString() {
-        return this.nimi + " (" + this.nimiLatinaksi + "):" + this.havaintojenLkm + " havaintoa";
+        return this.nimi + " (" + this.nimiLatinaksi + "): " + this.havaintojenLkm + " havaintoa";
     }
 }

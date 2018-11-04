@@ -23,7 +23,7 @@ public class Lintuhavainnot {
     
     public Lintu haeNimella(String nimi) {
         for (Lintu lintu: linnut) {
-            if (lintu.nimi().equals(nimi)) {
+            if (lintu.nimi().toLowerCase().equals(nimi.toLowerCase())) {
                 return lintu;
             }
         }
