@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,23 +11,29 @@ import java.util.HashMap;
  */
 public class Lintuhavainnot {
     // havainto sisältää tiedon linnusta ja havaintokertojen lukumäärästä
-    private HashMap<Lintu, Integer> havainnot;
+    private ArrayList<Lintu> linnut;
     
     public Lintuhavainnot() {
-        this.havainnot = new HashMap<>();
+        this.linnut = new ArrayList<>();
     }
     
     public void lisaaHavainto(Lintu lintu) {
-        int havaintoja = havaintojenLkm(lintu);
-        this.havainnot.put(lintu, havaintoja + 1);
+        linnut.add(lintu);
     }
     
-    public int havaintojenLkm(Lintu lintu) {
-        // palautetaan havaintojen määrä tai 0, mikäli aiempia havaintoja ei ole.
-        return this.havainnot.getOrDefault(lintu, 0);
+    public Lintu haeNimella(String nimi) {
+        for (Lintu lintu: linnut) {
+            if (lintu.nimi().equals(nimi)) {
+                return lintu;
+            }
+        }
+        return null;
     }
     
-    public String havainto(Lintu lintu) {
-        return ": " + this.havainnot.getOrDefault(lintu, 0) + " havaintoa";
+    public void tulostaHavainnot() {
+        for (Lintu l: linnut) {
+            System.out.println(l);
+        }
     }
 }
+

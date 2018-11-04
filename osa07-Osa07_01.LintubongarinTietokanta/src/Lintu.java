@@ -11,10 +11,12 @@
 public class Lintu {
     private String nimi;
     private String nimiLatinaksi;
+    private int havaintojenLkm;
     
     public Lintu(String nimi, String latina) {
         this.nimi = nimi;
         this.nimiLatinaksi = latina;
+        this.havaintojenLkm = 0;
     }
     
     public String nimi() {
@@ -25,8 +27,15 @@ public class Lintu {
         return this.nimiLatinaksi;
     }
     
+    public int havaintojenLkm() {
+        return this.havaintojenLkm;
+    }
+    
+    public void lisaaHavainto() {
+        this.havaintojenLkm++;
+    }
     @Override
     public String toString() {
-        return this.nimi + " (" + this.nimiLatinaksi + ")";
+        return this.nimi + " (" + this.nimiLatinaksi + "):" + this.havaintojenLkm + " havaintoa";
     }
 }

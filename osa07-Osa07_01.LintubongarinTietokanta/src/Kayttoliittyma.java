@@ -12,14 +12,12 @@ import java.util.Scanner;
 public class Kayttoliittyma {
     private Scanner lukija;
     private Lintu lintu;
-    private Linnut linnut;
     private Lintuhavainnot havainnot;
     
     
     public Kayttoliittyma(Scanner lukija) {
         this.lukija = lukija;
         this.havainnot = new Lintuhavainnot();
-        this.linnut = new Linnut();
     }
     
     public void kaynnista() {
@@ -33,15 +31,15 @@ public class Kayttoliittyma {
         while (true) {
             String komento = kysy("?");
             
-            if (komento.equals("Lopeta")) {
+            if (komento.toLowerCase().equals("lopeta")) {
                 break;
-            } else if (komento.equals("Lisaa")) {
+            } else if (komento.toLowerCase().equals("lisaa")) {
                 lisaa();
-            } else if (komento.equals("Havainto")) {
+            } else if (komento.toLowerCase().equals("havainto")) {
                 havainto();
-            } else if (komento.equals("Tilasto")) {
+            } else if (komento.toLowerCase().equals("tilasto")) {
                 tilasto();
-            } else if (komento.equals("Nayta")) {
+            } else if (komento.toLowerCase().equals("nayta")) {
                 nayta();
             }
         }
@@ -49,36 +47,32 @@ public class Kayttoliittyma {
     
     public String kysy(String kysymys) {
         System.out.print(kysymys + " ");
-        return lukija.nextLine();
+        return lukija.nextLine().trim();
     }
     
     public void lisaa() {
-        String nimi = kysy("Nimi: ");
-        String latina = kysy("Latinankielinen nimi: ");
+        String nimi = kysy("Nimi:");
+        String latina = kysy("Latinankielinen nimi:");
         
-        linnut.lisaaLintu(new Lintu(nimi, latina));
+        havainnot.lisaaHavainto(new Lintu(nimi, latina));
     }
     
     public void havainto() {
-        String nimi = kysy("Nimi: ");
-        Lintu onkoLintu = linnut.onkoLintuListalla(nimi);
-        if (onkoLintu == null) {
-            System.out.println("Ei ole lintu!");
+        String nimi = kysy("Nimi:");
+        Lintu l = havainnot.haeNimella(nimi);
+        if (l == null) {
+            System.out.println("Ei ole lintu");
         } else {
-            havainnot.lisaaHavainto(onkoLintu);
+            l.lisaaHavainto();
         }
-        
     }
     
     public void tilasto() {
-        for (Lintu l: linnut.getLinnut()) {
-            System.out.println(l + havainnot.havainto(l));
-        }
+        havainnot.tulostaHavainnot();
     }
     
     public void nayta() {
-        String nimi = kysy("Mikä ?");
-        Lintu onkoLintu = linnut.onkoLintuListalla(nimi);
-        System.out.println(onkoLintu + havainnot.havainto(onkoLintu));
+        String nimi = kysy("Mikä?");
+        System.out.println(havainnot.haeNimella(nimi));
     }
 }
