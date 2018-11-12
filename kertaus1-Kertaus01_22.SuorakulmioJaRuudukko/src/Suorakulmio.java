@@ -36,13 +36,5 @@ public class Suorakulmio {
     public int getKorkeus() {
         return this.korkeus;
     }
-    
-    public int xPlusLeveys() {
-        return this.x + this.leveys;
-    }
-    
-    public int yPlusKorkeus() {
-        return this.y + this.korkeus;
-    }
 }
  
